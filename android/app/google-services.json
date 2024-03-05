@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636220244656",
+    "project_id": "aellpr-9026e",
+    "storage_bucket": "aellpr-9026e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636220244656:android:b3fe971f76fb81540bf175",
+        "android_client_info": {
+          "package_name": "com.example.aellpr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9EYwpdorSXqaZDIh4IamLYSyEK_TSFeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
