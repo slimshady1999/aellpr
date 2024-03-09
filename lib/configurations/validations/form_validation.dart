@@ -92,6 +92,17 @@ class FormValidation {
       return null;
     }
   }
+
+  //-- product quantity validation
+  static String? productQuantitiVerification(String? value) {
+    if (value == null || value.isEmpty) {
+      return "product quantity is required";
+      // ignore: prefer_is_empty
+    } else if (value.length == 0) {
+      return "product quantity must be above 1";
+    }
+    return null;
+  }
 }
 // else if (value.length < 11) {
 //       return "Phone should be 11 digits";

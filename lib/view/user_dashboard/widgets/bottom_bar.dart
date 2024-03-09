@@ -1,5 +1,8 @@
+import 'package:aellpr/view/user_dashboard/profile_management/profile_screen.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
 import 'package:flutter/material.dart';
+
+import '../package_history.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({super.key});
@@ -15,14 +18,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     const UserDashboardScreen(),
 
     //-- page2
-    Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.white,
-        child: const Align(
-            alignment: Alignment.center,
-            child: Text(" Coming Soon",
-                style: TextStyle(fontSize: 30, color: Colors.red)))),
+    const PackageHistory(),
     //-- page3
     Container(
         height: double.infinity,
@@ -33,14 +29,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
             child: Text(" Coming Soon",
                 style: TextStyle(fontSize: 30, color: Colors.red)))),
     //-- page4
-    Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.white,
-        child: const Align(
-            alignment: Alignment.center,
-            child: Text(" Coming Soon",
-                style: TextStyle(fontSize: 30, color: Colors.red))))
+    const UserProfileScreen(),
   ];
 
   moveToNextPage(int index) {

@@ -1,4 +1,6 @@
+import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/withdraw_money/withdraw_money_screen.dart';
+import 'package:aellpr/view/user_dashboard/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -71,7 +73,7 @@ transactionSuccessScreen(
                       child: InkWell(
                         borderRadius: BorderRadius.circular(30),
                         onTap: () {
-                          Get.offAll(() => const WithdrawMoneyScreen());
+                          Get.offAll(() => const CustomBottomBar());
                         },
                         child: Center(
                           child: Text(

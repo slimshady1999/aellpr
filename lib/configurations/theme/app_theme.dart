@@ -13,16 +13,34 @@ var customTheme = ThemeData(
     textTheme: const TextTheme(
       //-- subtitle
       titleSmall: TextStyle(
-          fontSize: 25, color: Color(0xFF2d2d2d), fontWeight: FontWeight.w600),
+          fontFamily: "Poppins-Regular",
+          fontSize: 18,
+          color: Color(0xFF2d2d2d),
+          fontWeight: FontWeight.w600),
 
       //-- title large
       titleLarge: TextStyle(
-          fontSize: 30, color: Color(0xFF121212), fontWeight: FontWeight.bold),
+          fontFamily: "Poppins-Regular",
+          fontSize: 20,
+          color: Color(0xFF121212),
+          fontWeight: FontWeight.w600),
 
       //-- textbody
-      bodySmall: TextStyle(fontSize: 15, color: Color(0xFF121212)),
-      bodyLarge: TextStyle(fontSize: 17, color: Color(0xFF121212)),
-      bodyMedium: TextStyle(fontSize: 17, color: Colors.white),
+      bodySmall: TextStyle(
+          fontFamily: "Poppins-Regular",
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          color: Color(0xFF121212)),
+      bodyLarge: TextStyle(
+          fontFamily: "Poppins-Regular",
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+          color: Color(0xFF121212)),
+      bodyMedium: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontFamily: "Poppins-Regular",
+          fontSize: 16,
+          color: Colors.black),
 
       //-- colors
     ));
