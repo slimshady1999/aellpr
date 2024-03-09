@@ -1,10 +1,10 @@
 import 'package:aellpr/configurations/loading_screen/shimmer_loading.dart';
-import 'package:aellpr/controllers/user_controller/users_controller.dart';
+import 'package:aellpr/controllers/dispay_user_info_controller/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class UserProfilePage extends StatelessWidget {
-  const UserProfilePage({super.key});
+class UserEditProfileScreen extends StatelessWidget {
+  const UserEditProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

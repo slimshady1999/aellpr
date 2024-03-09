@@ -16,6 +16,9 @@ class CustomFirebaseAuthException implements Exception {
 
       case "user-disabled":
         return "This account / user is disabled or deactivated please contact support";
+
+      case "invalid-password":
+        return "Invalid account";
       default:
         return "An unexpected error occured";
     }

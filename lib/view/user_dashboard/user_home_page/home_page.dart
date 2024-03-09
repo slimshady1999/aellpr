@@ -1,8 +1,8 @@
-import 'package:aellpr/configurations/loading_screen/loading_screen.dart';
-//import 'package:aellpr/configurations/loading_screen/shimmer_loading.dart';
-import 'package:aellpr/controllers/user_controller/users_controller.dart';
-import 'package:aellpr/view/user_dashboard/profile_management/user_profile_page.dart';
+import 'package:aellpr/controllers/dispay_user_info_controller/users_controller.dart';
+import 'package:aellpr/view/user_dashboard/profile_management/profile_screen.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/add_%20money/add_money_screen.dart';
+import 'package:aellpr/view/user_dashboard/user_home_page/send_package/package_first_screen.dart';
+import 'package:aellpr/view/user_dashboard/user_home_page/transaction_history/transaction_history.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/withdraw_money/withdraw_money_screen.dart';
 import 'package:aellpr/view/user_dashboard/widgets/user_notification_screen.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class UserDashboardScreen extends GetView {
                             padding: const EdgeInsets.only(left: 20.0),
                             child: GestureDetector(
                               onTap: () {
-                                Get.to(() => const UserProfilePage());
+                                Get.to(() => const UserProfileScreen());
                               },
                               child: const CircleAvatar(
                                 backgroundImage:
@@ -116,7 +116,10 @@ class UserDashboardScreen extends GetView {
                             Padding(
                               padding: const EdgeInsets.only(right: 8.0),
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.to(
+                                        () => const TransactionHistoryScreen());
+                                  },
                                   child: const Text("Transaction history",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 13))),
@@ -234,92 +237,88 @@ class UserDashboardScreen extends GetView {
                 ),
 
                 //-- access delivery guys now
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
-                    height: 70,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFFffdfc9),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12.0),
-                          child: Image.asset("assets/image/delivery-man.png",
-                              height: 55, width: 55),
-                        ),
+                Container(
+                  margin: const EdgeInsets.only(left: 25, right: 25, top: 10),
+                  height: 70,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFffdfc9),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: Image.asset("assets/image/delivery-man.png",
+                            height: 55, width: 55),
+                      ),
 
-                        // withdraw button
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Send a Package",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 14,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500),
-                              ),
-                              const Text(
-                                "Get a Helper to deliver your package",
-                                style: TextStyle(
-                                    fontSize: 9,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ]),
-                        CircleAvatar(
-                            radius: 20,
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primary,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.arrow_forward,
-                                    color: Colors.white))),
-                      ],
-                    ),
+                      // withdraw button
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Send a Package",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500),
+                            ),
+                            const Text(
+                              "Get a Helper to deliver your package",
+                              style: TextStyle(
+                                  fontSize: 9,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ]),
+                      CircleAvatar(
+                          radius: 20,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          child: IconButton(
+                              onPressed: () {
+                                Get.to(() => const PackageFirstScreen());
+                              },
+                              icon: const Icon(Icons.arrow_forward,
+                                  color: Colors.white))),
+                    ],
                   ),
                 ),
 
                 //-- ADs section
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
-                    height: MediaQuery.of(context).size.height / 5.3,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF2d2d2d),
-                        image: const DecorationImage(
-                            fit: BoxFit.fill,
-                            colorFilter: ColorFilter.mode(
-                                Color.fromARGB(145, 0, 0, 0), BlendMode.darken),
-                            image: AssetImage("assets/image/happy-black.png")),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Ads will be here",
-                            style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ]),
-                  ),
+                Container(
+                  margin: const EdgeInsets.only(left: 25, right: 25, top: 10),
+                  height: MediaQuery.of(context).size.height / 5.3,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF2d2d2d),
+                      image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          colorFilter: ColorFilter.mode(
+                              Color.fromARGB(145, 0, 0, 0), BlendMode.darken),
+                          image: AssetImage("assets/image/happy-black.png")),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Ads will be here",
+                          style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ]),
                 ),
 
                 //-- Products Delivery History section
                 Padding(
-                  padding: const EdgeInsets.only(top: 25.0, bottom: 10),
+                  padding: const EdgeInsets.only(top: 5.0, bottom: 10),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -355,7 +354,7 @@ class UserDashboardScreen extends GetView {
                         ),
                         Container(
                           margin: const EdgeInsets.only(
-                              left: 25, right: 25, top: 15),
+                              left: 25, right: 25, top: 6),
                           height: MediaQuery.of(context).size.height / 5.0,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
