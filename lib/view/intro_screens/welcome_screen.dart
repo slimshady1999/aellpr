@@ -45,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
-                                .copyWith(fontSize: 13),
+                                .copyWith(fontSize: 13, color: Colors.white),
                           ),
                         ),
                       ),
@@ -74,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
-                                  .copyWith(fontSize: 13),
+                                  .copyWith(fontSize: 13, color: Colors.white),
                             ),
                             TextButton(
                               onPressed: () {
@@ -87,7 +87,8 @@ class WelcomeScreen extends StatelessWidget {
                                     .bodyMedium!
                                     .copyWith(
                                         fontSize: 13,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
                               ),
                             )
                           ],

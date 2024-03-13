@@ -21,7 +21,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
             children: [
               //-- back button and page title
               Container(
-                margin: const EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 1),
                 width: double.infinity,
                 child: Row(children: [
                   Padding(
@@ -44,14 +44,11 @@ class WithdrawMoneyScreen extends StatelessWidget {
 
               //-- Amount section
               const SizedBox(height: 100),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child: Text("Amount",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500)),
-              ),
+              const Text("Amount",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500)),
               IntrinsicWidth(
                 child: TextFormField(
                   controller: controller.withdrawAmountController,
@@ -83,24 +80,20 @@ class WithdrawMoneyScreen extends StatelessWidget {
               ),
 
               //-- processing fee text
-              Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  const Text("processing fee: ",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
-                  Image.asset("assets/image/naira_mini.png",
-                      height: 10, width: 10, fit: BoxFit.cover),
-                  const Text("50 ",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
-                ]),
-              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                const Text("processing fee: ",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black)),
+                Image.asset("assets/image/naira_mini.png",
+                    height: 10, width: 10, fit: BoxFit.cover),
+                const Text("50 ",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black)),
+              ]),
 
               //-- Send money to beneficiary
               const SizedBox(
@@ -207,7 +200,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
                 child: ListTile(
                   selected: true,
-                  selectedTileColor: Colors.white,
+                  selectedTileColor: const Color(0xFFf3f0f0),
                   enabled: true,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -219,7 +212,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
                           fontSize: 15,
                           color: Colors.black,
                           fontWeight: FontWeight.w500)),
-                  subtitle: const Text("345 538 2145",
+                  subtitle: const Text("*** *** 2145",
                       style: TextStyle(
                           fontSize: 12,
                           color: Colors.black,

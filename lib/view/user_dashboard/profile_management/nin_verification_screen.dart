@@ -22,91 +22,93 @@ class NinVerificationScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: Form(
                   key: controller.ninKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25, top: 35),
-                        child: Text(
-                          "Verify your NIN",
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25, top: 10),
-                        child: Text(
-                            "Please enter your NIN for verification. Note your information is safe with us.",
-                            style: Theme.of(context).textTheme.bodySmall),
-                      ),
-
-                      //-- First Name form
-                      Padding(
-                        padding:
-                            const EdgeInsets.only(top: 30, left: 25, right: 25),
-                        child: SizedBox(
-                          height: 57,
-                          child: TextFormField(
-                            controller: controller.ninController,
-                            keyboardType: TextInputType.number,
-                            validator: (value) =>
-                                FormValidation.ninVerification(value),
-                            decoration: InputDecoration(
-                                filled: true,
-                                hintText: "Enter your NIN",
-                                hintStyle: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                        color: const Color.fromARGB(
-                                            255, 146, 145, 145)),
-                                fillColor: const Color(0xFFede9e9),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(20))),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 25, top: 35),
+                          child: Text(
+                            "Verify your NIN",
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 25, top: 10),
+                          child: Text(
+                              "Please enter your NIN for verification. Note your information is safe with us.",
+                              style: Theme.of(context).textTheme.bodySmall),
+                        ),
 
-                      //-- Skip Button
-                      const SizedBox(height: 17),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                Get.to(() => const UploadDp());
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Text(
-                                  "Skip!",
-                                  style: Theme.of(context)
+                        //-- First Name form
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 25, right: 25),
+                          child: SizedBox(
+                            height: 57,
+                            child: TextFormField(
+                              controller: controller.ninController,
+                              keyboardType: TextInputType.number,
+                              validator: (value) =>
+                                  FormValidation.ninVerification(value),
+                              decoration: InputDecoration(
+                                  filled: true,
+                                  hintText: "Enter your NIN",
+                                  hintStyle: Theme.of(context)
                                       .textTheme
-                                      .bodyMedium!
+                                      .bodySmall!
                                       .copyWith(
-                                          color: Colors.red,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                          color: const Color.fromARGB(
+                                              255, 146, 145, 145)),
+                                  fillColor: const Color(0xFFede9e9),
+                                  border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(20))),
+                            ),
+                          ),
+                        ),
+
+                        //-- Skip Button
+                        const SizedBox(height: 17),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              TextButton(
+                                onPressed: () {
+                                  Get.to(() => const UploadDp());
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: Text(
+                                    "Skip!",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .copyWith(
+                                            color: Colors.red,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Text(
-                              "I will verify later",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontSize: 16),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                              Text(
+                                "I will verify later",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
+                                        fontSize: 16),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

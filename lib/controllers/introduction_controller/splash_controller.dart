@@ -28,7 +28,7 @@ class SplashController extends GetxController {
 
     if (userDataStorage.read("id") != null ||
         newAuth.currentUser?.uid != null) {
-      Future.delayed(const Duration(seconds: 7), () {
+      Future.delayed(const Duration(seconds: 4), () {
         Get.offAll(() => const CustomBottomBar());
       });
     } else {
