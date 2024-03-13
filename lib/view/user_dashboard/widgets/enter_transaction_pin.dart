@@ -8,7 +8,7 @@ enterTransactionPin() {
   showModalBottomSheet(
       context: Get.overlayContext!,
       builder: (context) => Container(
-            height: MediaQuery.of(context).size.height / 2.1,
+            height: MediaQuery.of(context).size.height / 1.4,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
                 color: Colors.white,

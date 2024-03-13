@@ -243,7 +243,7 @@ class UserDashboardScreen extends GetView {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       color: const Color(0xFFffdfc9),
-                      borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(7)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

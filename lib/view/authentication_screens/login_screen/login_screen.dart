@@ -17,14 +17,14 @@ class UsersLoginScreen extends GetView<LoginController> {
       body: SafeArea(
         child: Form(
           key: controller.loginKey,
-          child: SingleChildScrollView(
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: SizedBox(
-                    // height: MediaQuery.of(context).size.height / 2.8,
-                    width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  // height: MediaQuery.of(context).size.height / 2.8,
+                  width: MediaQuery.of(context).size.width,
+                  child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -216,7 +216,7 @@ class UsersLoginScreen extends GetView<LoginController> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
-                                      .copyWith(fontSize: 13),
+                                      .copyWith(fontSize: 13,color: Colors.white),
                                 ),
                               ),
                             ),
@@ -226,40 +226,43 @@ class UsersLoginScreen extends GetView<LoginController> {
                     ),
                   ),
                 ),
+              ),
 
-                //-- signup link
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                      margin: const EdgeInsets.only(bottom: 20),
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Don't have an account?",
-                            style: TextStyle(fontSize: 15, color: Colors.black),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 3.0),
-                            child: GestureDetector(
-                                onTap: () {
-                                  Get.to(() => const NameScreen());
-                                },
-                                child: const Text(
-                                  "Signup",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          )
-                        ],
-                      )),
-                )
-              ],
-            ),
+              //-- signup link
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account?",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(fontSize: 15, color: Colors.black),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 3.0),
+                          child: GestureDetector(
+                              onTap: () {
+                                Get.to(() => const NameScreen());
+                              },
+                              child: const Text(
+                                "Signup",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        )
+                      ],
+                    )),
+              )
+            ],
           ),
         ),
       ),
