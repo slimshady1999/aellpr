@@ -22,8 +22,7 @@ class WithdrawalPinScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 20),
+                  SizedBox(
                     width: double.infinity,
                     child: Row(children: [
                       Padding(
@@ -36,11 +35,8 @@ class WithdrawalPinScreen extends StatelessWidget {
                               Icons.arrow_back,
                             )),
                       ),
-                      const Text("Create Transaction Pin",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black))
+                      Text("Create Transaction Pin",
+                          style: Theme.of(context).textTheme.bodyMedium)
                     ]),
                   ),
 
@@ -49,11 +45,8 @@ class WithdrawalPinScreen extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  const Text("Create transaction 4-digits Pin-code",
-                      style: TextStyle(
-                          fontSize: 15.7,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
+                  Text("Create transaction 4-digits Pin-code",
+                      style: Theme.of(context).textTheme.bodyLarge),
 
                   //-- Pin input
                   const SizedBox(
@@ -205,7 +198,7 @@ class WithdrawalPinScreen extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+                margin: const EdgeInsets.only(left: 22, right: 22, bottom: 25),
                 height: 60,
                 width: MediaQuery.of(context).size.width,
                 child: Material(
@@ -222,7 +215,7 @@ class WithdrawalPinScreen extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!
-                            .copyWith(fontSize: 13),
+                            .copyWith(fontSize: 13, color: Colors.white),
                       ),
                     ),
                   ),

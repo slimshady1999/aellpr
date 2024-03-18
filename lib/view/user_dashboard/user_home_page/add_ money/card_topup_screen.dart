@@ -1,6 +1,7 @@
 import 'package:aellpr/configurations/custom_showDialog/select_bank_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 //-- Card topup screen1
@@ -16,12 +17,11 @@ class CardTopupScreen1 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: const EdgeInsets.only(top: 20),
+            SizedBox(
               width: double.infinity,
               child: Row(children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 20),
+                  padding: const EdgeInsets.only(left: 13, right: 20),
                   child: IconButton(
                       onPressed: () {
                         Get.back();
@@ -30,26 +30,22 @@ class CardTopupScreen1 extends StatelessWidget {
                         Icons.arrow_back,
                       )),
                 ),
-                const Text("Top-Up with Card/Account",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black))
+                Text(
+                  "Top-Up with Card/Account",
+                  style: Theme.of(context).textTheme.bodyMedium,
+                )
               ]),
             ),
 
             //-- Amount form field
-            const Padding(
-              padding: EdgeInsets.only(left: 30, top: 33),
-              child: Text("Amount",
-                  style: TextStyle(
-                      fontSize: 14.6,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black)),
+            Padding(
+              padding: const EdgeInsets.only(left: 22, top: 33),
+              child:
+                  Text("Amount", style: Theme.of(context).textTheme.bodyMedium),
             ),
 
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+              padding: const EdgeInsets.only(left: 22, right: 22, top: 10),
               child: Form(
                 key: amountFormKey,
                 child: TextFormField(
@@ -57,8 +53,14 @@ class CardTopupScreen1 extends StatelessWidget {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         hintText: "00.000",
-                        prefixIcon: Image.asset(
-                          "assets/image/naira_logo.png",
+                        prefixIcon: CircleAvatar(
+                          backgroundColor: const Color(0xFFf5f5f5),
+                          radius: 15,
+                          child: SvgPicture.asset(
+                            height: 15,
+                            width: 15,
+                            "assets/image/naira.svg",
+                          ),
                         ),
                         contentPadding:
                             const EdgeInsets.only(top: 31, left: 10),
@@ -66,34 +68,32 @@ class CardTopupScreen1 extends StatelessWidget {
                         fillColor: const Color(0xFFf5f5f5),
                         border: OutlineInputBorder(
                             borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(30)))),
+                            borderRadius: BorderRadius.circular(20)))),
               ),
             ),
 
             //-- use bank transfer method text
             Padding(
-              padding: const EdgeInsets.only(left: 30, top: 20),
-              child: Row(children: [
-                const Text("For amount above ",
-                    style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black)),
+              padding: const EdgeInsets.only(left: 22, top: 20),
+              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Text("For amount above ",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(fontSize: 11)),
                 Image.asset(
                   "assets/image/naira_mini.png",
                 ),
-                const Text(" 9,999,00 ",
-                    style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black)),
+                Text(" 9,999,00 ",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(fontSize: 11)),
                 GestureDetector(
                   onTap: () {},
-                  child: const Text("use bank transfer",
-                      style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF8282FA))),
+                  child: Text("use bank transfer",
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          fontSize: 11, color: const Color(0xFF8282FA))),
                 )
               ]),
             ),
@@ -116,7 +116,7 @@ class CardTopupScreen1 extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
-                                .copyWith(fontSize: 13),
+                                .copyWith(fontSize: 13, color: Colors.white),
                           ),
                         ),
                       ),
@@ -140,7 +140,7 @@ class CardTopupScreen1 extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
-                                .copyWith(fontSize: 13),
+                                .copyWith(fontSize: 13, color: Colors.white),
                           ),
                         ),
                       ),
@@ -167,12 +167,11 @@ class CardTopupScreen2 extends StatelessWidget {
           body: SafeArea(
               child: SingleChildScrollView(
             child: Column(children: [
-              Container(
-                margin: const EdgeInsets.only(top: 20),
+              SizedBox(
                 width: double.infinity,
                 child: Row(children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 20),
+                    padding: const EdgeInsets.only(left: 15.5, right: 20),
                     child: IconButton(
                         onPressed: () {
                           Get.back();
@@ -181,47 +180,38 @@ class CardTopupScreen2 extends StatelessWidget {
                           Icons.arrow_back,
                         )),
                   ),
-                  const Text("Top-Up with Card/Account",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black))
+                  Text("Top-Up with Card/Account",
+                      style: Theme.of(context).textTheme.bodyMedium)
                 ]),
               ),
 
               //-- Tabs
 
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 30, left: 22, right: 22),
                 child: TabBar(
                     tabAlignment: TabAlignment.fill,
                     physics: const BouncingScrollPhysics(),
                     dividerColor: Colors.transparent,
                     indicatorColor: Theme.of(context).colorScheme.primary,
-                    tabs: const [
+                    tabs: [
                       SizedBox(
                         height: 40,
                         width: 210,
                         child: Text("Debit Card",
-                            style: TextStyle(
-                                fontSize: 18.5,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500)),
+                            style: Theme.of(context).textTheme.bodyLarge),
                       ),
                       SizedBox(
                         height: 40,
                         width: 210,
                         child: Text("Bank Account",
-                            style: TextStyle(
-                                fontSize: 18.5,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500)),
+                            style: Theme.of(context).textTheme.bodyLarge),
                       )
                     ]),
               ),
 
               //-- Tab 1 contents
-              Container(
+              SizedBox(
                   height: MediaQuery.of(context).size.height / 1.5,
                   width: double.infinity,
                   child: TabBarView(children: [
@@ -233,23 +223,25 @@ class CardTopupScreen2 extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               //-- Card Number form
-                              const Padding(
-                                padding: EdgeInsets.only(left: 20, top: 40),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 22, top: 40),
                                 child: Text("Card Number",
-                                    style: TextStyle(
-                                        fontSize: 14.6,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.black)),
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 30, right: 30, top: 10),
+                                    left: 22, right: 22, top: 5),
                                 child: TextFormField(
                                     keyboardType: TextInputType.emailAddress,
                                     decoration: InputDecoration(
                                         prefixIcon:
                                             const Icon(Icons.credit_card),
                                         hintText: "Enter your card number",
+                                        hintStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
                                         contentPadding: const EdgeInsets.only(
                                             top: 31, left: 10),
                                         filled: true,
@@ -262,113 +254,107 @@ class CardTopupScreen2 extends StatelessWidget {
 
                               //-- Expiration Card date and cvv
                               Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 12),
+                                padding: const EdgeInsets.only(
+                                    left: 22, right: 22, top: 16),
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       //-- Month / Year Expiry Date
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              const Text("Expiry Date",
-                                                  style: TextStyle(
-                                                      fontSize: 14.6,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      color: Colors.black)),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    top: 5),
-                                                child: SizedBox(
-                                                  height: 60,
-                                                  width: 150,
-                                                  child: TextFormField(
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      inputFormatters: [
-                                                        LengthLimitingTextInputFormatter(
-                                                            4),
-                                                      ],
-                                                      decoration: InputDecoration(
-                                                          hintText: "MM/YY",
-                                                          contentPadding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 31,
-                                                                  left: 14),
-                                                          filled: true,
-                                                          fillColor:
-                                                              const Color(
-                                                                  0xFFf3f0f0),
-                                                          border: OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide
-                                                                      .none,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          30)))),
-                                                ),
-                                              ),
-                                            ],
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Expiry Date",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodySmall),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 5),
+                                            child: SizedBox(
+                                              height: 60,
+                                              width: 150,
+                                              child: TextFormField(
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  inputFormatters: [
+                                                    LengthLimitingTextInputFormatter(
+                                                        4),
+                                                  ],
+                                                  decoration: InputDecoration(
+                                                      hintText: "MM/YY",
+                                                      hintStyle:
+                                                          Theme.of(context)
+                                                              .textTheme
+                                                              .bodySmall,
+                                                      contentPadding:
+                                                          const EdgeInsets.only(
+                                                              top: 31,
+                                                              left: 14),
+                                                      filled: true,
+                                                      fillColor: const Color(
+                                                          0xFFf3f0f0),
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      30)))),
+                                            ),
                                           ),
-                                        ),
+                                        ],
                                       ),
 
                                       //-- CVV
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text("CVV",
-                                                style: TextStyle(
-                                                    fontSize: 14.6,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: Colors.black)),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                top: 5,
-                                              ),
-                                              child: SizedBox(
-                                                height: 60,
-                                                width: 150,
-                                                child: TextFormField(
-                                                    keyboardType:
-                                                        TextInputType.number,
-                                                    inputFormatters: [
-                                                      LengthLimitingTextInputFormatter(
-                                                          3),
-                                                    ],
-                                                    decoration: InputDecoration(
-                                                        hintText: "CVV",
-                                                        contentPadding:
-                                                            const EdgeInsets
-                                                                .only(
-                                                                top: 31,
-                                                                left: 14),
-                                                        filled: true,
-                                                        fillColor: const Color(
-                                                            0xFFf3f0f0),
-                                                        border: OutlineInputBorder(
-                                                            borderSide:
-                                                                BorderSide.none,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        30)))),
-                                              ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text("CVV",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodySmall),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              top: 5,
                                             ),
-                                          ],
-                                        ),
+                                            child: SizedBox(
+                                              height: 60,
+                                              width: 150,
+                                              child: TextFormField(
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  inputFormatters: [
+                                                    LengthLimitingTextInputFormatter(
+                                                        3),
+                                                  ],
+                                                  decoration: InputDecoration(
+                                                      hintText: "CVV",
+                                                      hintStyle:
+                                                          Theme.of(context)
+                                                              .textTheme
+                                                              .bodySmall,
+                                                      contentPadding:
+                                                          const EdgeInsets.only(
+                                                              top: 31,
+                                                              left: 14),
+                                                      filled: true,
+                                                      fillColor: const Color(
+                                                          0xFFf3f0f0),
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      30)))),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
@@ -376,17 +362,16 @@ class CardTopupScreen2 extends StatelessWidget {
                               ),
 
                               //-- Card Pin
-                              const Padding(
-                                padding: EdgeInsets.only(left: 25, top: 10),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 22, top: 8),
                                 child: Text("PIN",
-                                    style: TextStyle(
-                                        fontSize: 14.6,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.black)),
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 30, right: 30, top: 6),
+                                    left: 22, right: 22, top: 6),
                                 child: TextFormField(
                                     keyboardType: TextInputType.number,
                                     inputFormatters: [
@@ -394,6 +379,9 @@ class CardTopupScreen2 extends StatelessWidget {
                                     ],
                                     decoration: InputDecoration(
                                         hintText: "Enter card pin",
+                                        hintStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
                                         contentPadding: const EdgeInsets.only(
                                             top: 31, left: 10),
                                         filled: true,
@@ -409,7 +397,7 @@ class CardTopupScreen2 extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 20),
+                                    padding: const EdgeInsets.only(left: 22),
                                     child: Checkbox(
                                         activeColor: Theme.of(context)
                                             .colorScheme
@@ -454,7 +442,9 @@ class CardTopupScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium!
-                                            .copyWith(fontSize: 13),
+                                            .copyWith(
+                                                fontSize: 13,
+                                                color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -470,17 +460,14 @@ class CardTopupScreen2 extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             //-- Select Bank
-                            const Padding(
-                              padding: EdgeInsets.only(left: 20, top: 34),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 22, top: 34),
                               child: Text("Bank",
-                                  style: TextStyle(
-                                      fontSize: 14.6,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black)),
+                                  style: Theme.of(context).textTheme.bodySmall),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  top: 6, left: 20, right: 20),
+                                  top: 6, left: 22, right: 22),
                               child: Container(
                                 height: 55,
                                 width: double.infinity,
@@ -495,10 +482,10 @@ class CardTopupScreen2 extends StatelessWidget {
                                       Icons.account_balance,
                                       color: Colors.grey,
                                     ),
-                                    title: const Text(" Select Back",
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                        )),
+                                    title: Text(" Select Back",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall),
                                     trailing: const Icon(
                                       Icons.arrow_forward_ios,
                                       color: Colors.grey,
@@ -508,18 +495,15 @@ class CardTopupScreen2 extends StatelessWidget {
 
                             //-- Account Number
                             const SizedBox(height: 40),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 20),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 22),
                               child: Text("Bank Account",
-                                  style: TextStyle(
-                                      fontSize: 14.6,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black)),
+                                  style: Theme.of(context).textTheme.bodySmall),
                             ),
 
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 30, right: 30, top: 10),
+                                  left: 22, right: 22, top: 10),
                               child: TextFormField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -529,10 +513,8 @@ class CardTopupScreen2 extends StatelessWidget {
                                       prefixIcon: const Icon(Icons.credit_card),
                                       hintText:
                                           "Enter 10 digits account number",
-                                      hintStyle: const TextStyle(
-                                          fontSize: 13.6,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.black),
+                                      hintStyle:
+                                          Theme.of(context).textTheme.bodySmall,
                                       contentPadding: const EdgeInsets.only(
                                           top: 31, left: 10),
                                       filled: true,
@@ -546,7 +528,7 @@ class CardTopupScreen2 extends StatelessWidget {
                             //-- Continue Button
                             Container(
                               margin: const EdgeInsets.only(
-                                  top: 40, left: 25, right: 25),
+                                  top: 40, left: 22, right: 22),
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Material(
@@ -563,7 +545,9 @@ class CardTopupScreen2 extends StatelessWidget {
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
-                                          .copyWith(fontSize: 13),
+                                          .copyWith(
+                                              fontSize: 13,
+                                              color: Colors.white),
                                     ),
                                   ),
                                 ),

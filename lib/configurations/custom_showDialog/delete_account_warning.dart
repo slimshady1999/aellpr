@@ -22,7 +22,7 @@ class DeleteAccountWarning {
                       Container(
                         margin:
                             const EdgeInsets.only(top: 20, left: 40, right: 40),
-                        height: 250,
+                        height: 240,
                         width: double.infinity,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
@@ -35,8 +35,7 @@ class DeleteAccountWarning {
                                 height: 7,
                               ),
                               Text("Reminder",
-                                  style:
-                                      Theme.of(context).textTheme.titleLarge),
+                                  style: Theme.of(context).textTheme.bodyLarge),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -50,8 +49,8 @@ class DeleteAccountWarning {
                               Container(
                                 margin:
                                     const EdgeInsets.only(left: 25, right: 25),
-                                height: 60,
-                                width: MediaQuery.of(context).size.width,
+                                height: 40,
+                                width: 150,
                                 child: Material(
                                   color: Theme.of(context).colorScheme.primary,
                                   borderRadius: BorderRadius.circular(30),
@@ -65,7 +64,7 @@ class DeleteAccountWarning {
                                         "Continue",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyMedium!
+                                            .bodySmall!
                                             .copyWith(color: Colors.white),
                                       ),
                                     ),
@@ -76,14 +75,14 @@ class DeleteAccountWarning {
                               Container(
                                 margin: const EdgeInsets.only(
                                     left: 25, right: 25, bottom: 5),
-                                height: 60,
+                                height: 40,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
                                     border: Border.all(
                                       color:
                                           Theme.of(context).colorScheme.primary,
                                     )),
-                                width: MediaQuery.of(context).size.width,
+                                width: 150,
                                 child: Material(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(30),
@@ -96,7 +95,7 @@ class DeleteAccountWarning {
                                       child: Text("Back",
                                           style: Theme.of(context)
                                               .textTheme
-                                              .bodyMedium),
+                                              .bodySmall),
                                     ),
                                   ),
                                 ),

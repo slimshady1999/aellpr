@@ -1,5 +1,5 @@
 import 'package:aellpr/configurations/custom_showDialog/payment_cancel_warning.dart';
-import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
+import 'package:aellpr/view/user_dashboard/live_map_screen/live_map_screen.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/send_package/chat_page.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/send_package/pay_with_wallet.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/send_package/select_card_screen.dart';
@@ -91,13 +91,10 @@ class PackageThirdScreen extends StatelessWidget {
                   children: [
                     //-- Choose Payment method type
                     const SizedBox(height: 35),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 25, bottom: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24, bottom: 20),
                       child: Text("Please choose your payment method",
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                          style: Theme.of(context).textTheme.bodyLarge),
                     ),
 
                     //-- Pay with wallet
@@ -107,7 +104,7 @@ class PackageThirdScreen extends StatelessWidget {
                         walletPayment();
                       },
                       child: Container(
-                          margin: const EdgeInsets.only(left: 30, right: 30),
+                          margin: const EdgeInsets.only(left: 24, right: 24),
                           height: 55,
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -117,17 +114,14 @@ class PackageThirdScreen extends StatelessWidget {
                           child: Row(children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 20, right: 20),
+                                  const EdgeInsets.only(left: 24, right: 24),
                               child: Icon(
                                 Icons.wallet,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             ),
-                            const Text(" Pay with wallet",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400))
+                            Text(" Pay with wallet",
+                                style: Theme.of(context).textTheme.bodySmall)
                           ])),
                     ),
 
@@ -137,7 +131,7 @@ class PackageThirdScreen extends StatelessWidget {
                         Get.to(() => const SelectCardScreen());
                       },
                       child: Container(
-                          margin: const EdgeInsets.only(left: 30, right: 30),
+                          margin: const EdgeInsets.only(left: 24, right: 24),
                           height: 55,
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -147,17 +141,14 @@ class PackageThirdScreen extends StatelessWidget {
                           child: Row(children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 20, right: 20),
+                                  const EdgeInsets.only(left: 24, right: 24),
                               child: Icon(
                                 Icons.credit_card,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             ),
-                            const Text(" Pay with Card",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400))
+                            Text(" Pay with Card",
+                                style: Theme.of(context).textTheme.bodySmall)
                           ])),
                     ),
                   ],
@@ -172,7 +163,7 @@ class PackageThirdScreen extends StatelessWidget {
                   children: [
                     //-- read terms and condition check
                     Padding(
-                      padding: const EdgeInsets.only(left: 30, top: 20),
+                      padding: const EdgeInsets.only(left: 24, top: 24),
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -181,29 +172,27 @@ class PackageThirdScreen extends StatelessWidget {
                                 activeColor: Colors.grey,
                                 checkColor: Colors.white,
                                 onChanged: (value) {}),
-                            const Text("Yes, I Accept the",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black)),
+                            Text("Yes, I Accept the",
+                                style: Theme.of(context).textTheme.bodySmall),
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 4),
+                                padding: const EdgeInsets.only(left: 2.6),
                                 child: Text("Terms and Condition",
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w500,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary)),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary)),
                               ),
                             )
                           ]),
                     ),
                     Container(
                       margin: const EdgeInsets.only(
-                          top: 20, left: 25, right: 25, bottom: 25),
+                          top: 20, left: 24, right: 24, bottom: 25),
                       height: 60,
                       width: MediaQuery.of(context).size.width,
                       child: Material(
@@ -212,7 +201,7 @@ class PackageThirdScreen extends StatelessWidget {
                         child: InkWell(
                           borderRadius: BorderRadius.circular(30),
                           onTap: () {
-                            Get.to(() => const ChatPage());
+                            Get.to(() => const LiveMapScreen());
                           },
                           child: Center(
                             child: Text(
@@ -220,7 +209,7 @@ class PackageThirdScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
-                                  .copyWith(fontSize: 13),
+                                  .copyWith(fontSize: 13, color: Colors.white),
                             ),
                           ),
                         ),

@@ -63,7 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                       height: 50,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Color(0xFF000066),
+                          color: const Color(0xFF000066),
                           borderRadius: BorderRadius.circular(30)),
                       child: Center(
                         child: Row(
@@ -78,7 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                             TextButton(
                               onPressed: () {
-                                Get.to(() => NameScreen());
+                                Get.to(() => const NameScreen());
                               },
                               child: Text(
                                 "Sign Up!",
@@ -108,7 +108,7 @@ class WelcomeScreen extends StatelessWidget {
                           color: const Color(0xFFd2cdcd),
                           borderRadius: BorderRadius.circular(30)),
                       child: Material(
-                        color: Color.fromARGB(255, 226, 221, 221),
+                        color: const Color.fromARGB(255, 226, 221, 221),
                         borderRadius: BorderRadius.circular(30),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(30),

@@ -1,8 +1,6 @@
 import 'package:aellpr/configurations/custom_snackbars/custom_snackbar.dart';
 import 'package:aellpr/configurations/firebase/firebaseAuth/firebaseAuth.dart';
 import 'package:aellpr/configurations/loading_screen/loading_screen.dart';
-import 'package:aellpr/controllers/network_controller/network_controller.dart';
-import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
 import 'package:aellpr/view/user_dashboard/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -64,10 +62,5 @@ class LoginController extends GetxController {
       //-- show some error
       CustomSnackBar.errorSnackBar(title: "Oh Snap", message: e.toString());
     }
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }

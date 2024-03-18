@@ -1,4 +1,3 @@
-import 'package:aellpr/configurations/custom_snackbars/custom_snackbar.dart';
 import 'package:aellpr/configurations/firebase/firebaseAuth/firebaseAuth.dart';
 import 'package:aellpr/configurations/firebase/firebase_exception/firebase_exception.dart';
 import 'package:aellpr/models/user_model.dart';
@@ -66,7 +65,9 @@ class UserCloudDatabase extends GetxController {
           .collection("Vendor Account")
           .doc(controller.authUser?.uid)
           .update(json);
-    } catch (e) {}
+    } catch (e) {
+      throw "ops something went wrong";
+    }
   }
 
   //-- Delete User Data

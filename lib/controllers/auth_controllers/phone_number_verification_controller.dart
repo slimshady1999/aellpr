@@ -39,6 +39,8 @@ class PhonenumberVerificationController extends GetxController {
         },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
-    } catch (e) {}
+    } catch (e) {
+      throw "ops something went wrong";
+    }
   }
 }

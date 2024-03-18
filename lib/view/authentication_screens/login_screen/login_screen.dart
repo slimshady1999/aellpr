@@ -179,16 +179,10 @@ class UsersLoginScreen extends GetView<LoginController> {
                                     onPressed: () {
                                       Get.to(() => const PasswordResetPage());
                                     },
-                                    child: Text(
-                                      "Forgot Password?",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                              color: Colors.black,
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w600),
-                                    ),
+                                    child: Text("Forgot Password?",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge),
                                   ),
                                 ),
                               ],
@@ -216,7 +210,8 @@ class UsersLoginScreen extends GetView<LoginController> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
-                                      .copyWith(fontSize: 13,color: Colors.white),
+                                      .copyWith(
+                                          fontSize: 13, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -240,10 +235,7 @@ class UsersLoginScreen extends GetView<LoginController> {
                       children: [
                         Text(
                           "Don't have an account?",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(fontSize: 15, color: Colors.black),
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 3.0),
@@ -251,12 +243,9 @@ class UsersLoginScreen extends GetView<LoginController> {
                               onTap: () {
                                 Get.to(() => const NameScreen());
                               },
-                              child: const Text(
+                              child: Text(
                                 "Signup",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.bodyLarge,
                               )),
                         )
                       ],

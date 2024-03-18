@@ -1,8 +1,9 @@
+import 'package:aellpr/view/user_dashboard/live_map_screen/live_map_screen.dart';
 import 'package:aellpr/view/user_dashboard/profile_management/profile_screen.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
-import '../package_history.dart';
+import '../history_ screens/package_history.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({super.key});
@@ -20,14 +21,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     //-- page2
     const PackageHistory(),
     //-- page3
-    Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.white,
-        child: const Align(
-            alignment: Alignment.center,
-            child: Text(" Coming Soon",
-                style: TextStyle(fontSize: 30, color: Colors.red)))),
+    const LiveMapScreen(),
     //-- page4
     const UserProfileScreen(),
   ];

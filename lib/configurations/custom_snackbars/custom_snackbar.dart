@@ -34,7 +34,7 @@ class CustomSnackBar {
   }
 
   //-- warning snackbar
-  static WarningSnackBar({required title, message = "", duration = 5}) {
+  static warningSnackBar({required title, message = "", duration = 5}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,

@@ -24,19 +24,13 @@ enterTransactionPin() {
                     const SizedBox(
                       height: 40,
                     ),
-                    const Text("Enter your Transaction Pin",
-                        style: TextStyle(
-                            fontSize: 19.5,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black)),
+                    Text("Enter your Transaction Pin",
+                        style: Theme.of(context).textTheme.bodyMedium),
 
-                    const Padding(
-                      padding: EdgeInsets.only(top: 15),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
                       child: Text("Enter Pin to proceed with payment",
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black)),
+                          style: Theme.of(context).textTheme.bodySmall),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -193,7 +187,7 @@ enterTransactionPin() {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
-                                  .copyWith(fontSize: 13),
+                                  .copyWith(fontSize: 13, color: Colors.white),
                             ),
                           ),
                         ),

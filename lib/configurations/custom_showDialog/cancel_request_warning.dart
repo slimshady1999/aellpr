@@ -1,7 +1,8 @@
+import 'package:aellpr/view/user_dashboard/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LogoutlWarning {
+class CancelRequestWarning {
   static showWarning() {
     showDialog(
         context: Get.overlayContext!,
@@ -32,12 +33,12 @@ class LogoutlWarning {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const SizedBox(height: 5),
-                              Text("Logout",
+                              Text("Your Aellpr is Near you",
                                   style: Theme.of(context).textTheme.bodyLarge),
                               const SizedBox(height: 10),
                               Text(
                                   textAlign: TextAlign.center,
-                                  "Are you sure you want to logout",
+                                  "Do you really want to cancel this request",
                                   style: Theme.of(context).textTheme.bodySmall),
 
                               //-- Continue button
@@ -53,11 +54,11 @@ class LogoutlWarning {
                                   child: InkWell(
                                     borderRadius: BorderRadius.circular(30),
                                     onTap: () {
-                                      // Get.offAll(() => const CustomBottomBar());
+                                      Get.offAll(() => const CustomBottomBar());
                                     },
                                     child: Center(
                                       child: Text(
-                                        "Continue",
+                                        "Cancel",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodySmall!
@@ -73,14 +74,11 @@ class LogoutlWarning {
                                     left: 25, right: 25, bottom: 25),
                                 height: 40,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    border: Border.all(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                    )),
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
                                 width: 150,
                                 child: Material(
-                                  color: Colors.white,
+                                  color: const Color(0xFFFECFB0),
                                   borderRadius: BorderRadius.circular(30),
                                   child: InkWell(
                                     borderRadius: BorderRadius.circular(30),
@@ -89,10 +87,15 @@ class LogoutlWarning {
                                     },
                                     child: Center(
                                       child: Text(
-                                        "Back",
+                                        "wait for helper",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodySmall,
+                                            .bodySmall!
+                                            .copyWith(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .primary,
+                                            ),
                                       ),
                                     ),
                                   ),

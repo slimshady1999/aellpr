@@ -1,10 +1,8 @@
 import 'package:aellpr/configurations/loading_screen/loading_screen.dart';
 import 'package:aellpr/configurations/success_screen/transaction_success_screen.dart';
 import 'package:aellpr/controllers/transactions_controller/withdraw_controller.dart';
-import 'package:aellpr/view/user_dashboard/widgets/enter_transaction_pin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class EnterPinController extends GetxController {
   final controller = Get.put(WithdrawController());

@@ -1,4 +1,3 @@
-import 'package:aellpr/view/user_dashboard/user_home_page/home_page.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/send_package/enter_card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,13 +34,10 @@ class SelectCardScreen extends StatelessWidget {
 
                     //-- Choose Payment method type
                     const SizedBox(height: 25),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 32, bottom: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24, bottom: 20),
                       child: Text("Card Details",
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                          style: Theme.of(context).textTheme.bodyLarge),
                     ),
 
                     //-- Pay with wallet
@@ -49,7 +45,7 @@ class SelectCardScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () {},
                       child: Container(
-                          margin: const EdgeInsets.only(left: 30, right: 30),
+                          margin: const EdgeInsets.only(left: 24, right: 24),
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -71,40 +67,38 @@ class SelectCardScreen extends StatelessWidget {
                                             .primary,
                                       ),
                                     ),
-                                    const Column(
+                                    Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
                                         Text("Sterling Bank",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w400)),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge),
                                         Text("*** *** 5765",
-                                            style: TextStyle(
-                                                fontSize: 13,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w400)),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall),
                                       ],
                                     ),
                                   ],
                                 ),
-                                const Padding(
-                                  padding: EdgeInsets.only(right: 11),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 11),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.circle,
                                         size: 16,
                                         color: Colors.white,
                                       ),
-                                      SizedBox(height: 3),
+                                      const SizedBox(height: 3),
                                       Text("View Details",
-                                          style: TextStyle(
-                                              fontSize: 10,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.w300)),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall!
+                                              .copyWith(fontSize: 9.5)),
                                     ],
                                   ),
                                 )
@@ -118,7 +112,7 @@ class SelectCardScreen extends StatelessWidget {
                         enterCardDetails();
                       },
                       child: Container(
-                          margin: const EdgeInsets.only(left: 30, right: 30),
+                          margin: const EdgeInsets.only(left: 24, right: 24),
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -134,11 +128,8 @@ class SelectCardScreen extends StatelessWidget {
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             ),
-                            const Text(" Add new card",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400))
+                            Text(" Add new card",
+                                style: Theme.of(context).textTheme.bodySmall)
                           ])),
                     ),
                   ],
@@ -150,7 +141,7 @@ class SelectCardScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   margin: const EdgeInsets.only(
-                      top: 20, left: 25, right: 25, bottom: 25),
+                      top: 20, left: 24, right: 24, bottom: 25),
                   height: 60,
                   width: MediaQuery.of(context).size.width,
                   child: Material(
@@ -159,7 +150,7 @@ class SelectCardScreen extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(30),
                       onTap: () {
-                        //  controller.addBeneficiaryProcess();
+                        Get.back();
                       },
                       child: Center(
                         child: Text(
@@ -167,7 +158,7 @@ class SelectCardScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(fontSize: 13),
+                              .copyWith(fontSize: 13, color: Colors.white),
                         ),
                       ),
                     ),
