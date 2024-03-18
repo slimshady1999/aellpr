@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:aellpr/configurations/firebase/firebase_exception/firebase_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';

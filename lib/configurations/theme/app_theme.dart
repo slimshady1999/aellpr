@@ -28,18 +28,18 @@ var customTheme = ThemeData(
       //-- textbody
       bodySmall: TextStyle(
           fontFamily: "Poppins-Regular",
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: FontWeight.w500,
           color: Color(0xFF121212)),
       bodyLarge: TextStyle(
           fontFamily: "Poppins-Regular",
-          fontSize: 15,
+          fontSize: 14,
           fontWeight: FontWeight.w500,
           color: Color(0xFF121212)),
       bodyMedium: TextStyle(
           fontWeight: FontWeight.w600,
           fontFamily: "Poppins-Regular",
-          fontSize: 16,
+          fontSize: 14,
           color: Colors.black),
 
       //-- colors

@@ -1,7 +1,6 @@
 import 'package:aellpr/controllers/introduction_controller/onboarding_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends GetView {
@@ -76,7 +75,8 @@ class OnboardingScreen extends GetView {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
-                                      .copyWith(fontSize: 14),
+                                      .copyWith(
+                                          fontSize: 14, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -99,7 +99,8 @@ class OnboardingScreen extends GetView {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
-                                      .copyWith(fontSize: 16),
+                                      .copyWith(
+                                          fontSize: 16, color: Colors.white),
                                 ),
                               ),
                             ),

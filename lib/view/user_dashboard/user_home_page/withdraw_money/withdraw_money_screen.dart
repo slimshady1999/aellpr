@@ -1,9 +1,9 @@
 import 'package:aellpr/configurations/validations/form_validation.dart';
-import 'package:aellpr/controllers/transactions_controller/add_beneficiary_controller.dart';
 import 'package:aellpr/controllers/transactions_controller/withdraw_controller.dart';
 import 'package:aellpr/view/user_dashboard/user_home_page/withdraw_money/add_benficiary_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WithdrawMoneyScreen extends StatelessWidget {
   const WithdrawMoneyScreen({super.key});
@@ -11,7 +11,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(WithdrawController());
-    final _controller = Get.put(AddBeneficiaryController());
+    // final _controller = Get.put(AddBeneficiaryController());
     return Scaffold(
         body: SafeArea(
       child: Form(
@@ -20,8 +20,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
           child: Column(
             children: [
               //-- back button and page title
-              Container(
-                margin: const EdgeInsets.only(top: 1),
+              SizedBox(
                 width: double.infinity,
                 child: Row(children: [
                   Padding(
@@ -34,21 +33,14 @@ class WithdrawMoneyScreen extends StatelessWidget {
                           Icons.arrow_back,
                         )),
                   ),
-                  const Text("Withdraw Money",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black))
+                  Text("Withdraw Money",
+                      style: Theme.of(context).textTheme.bodyMedium)
                 ]),
               ),
 
               //-- Amount section
               const SizedBox(height: 100),
-              const Text("Amount",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500)),
+              Text("Amount", style: Theme.of(context).textTheme.bodyMedium),
               IntrinsicWidth(
                 child: TextFormField(
                   controller: controller.withdrawAmountController,
@@ -66,8 +58,14 @@ class WithdrawMoneyScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(
                           bottom: 10.0,
                         ),
-                        child: Image.asset(
-                          "assets/image/naira_logo.png",
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colors.transparent,
+                          child: SvgPicture.asset(
+                            "assets/image/naira.svg",
+                            height: 25,
+                            width: 25,
+                          ),
                         ),
                       ),
                       hintStyle: const TextStyle(
@@ -81,18 +79,11 @@ class WithdrawMoneyScreen extends StatelessWidget {
 
               //-- processing fee text
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const Text("processing fee: ",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black)),
-                Image.asset("assets/image/naira_mini.png",
+                Text("processing fee: ",
+                    style: Theme.of(context).textTheme.bodyLarge),
+                SvgPicture.asset("assets/image/naira.svg",
                     height: 10, width: 10, fit: BoxFit.cover),
-                const Text("50 ",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black)),
+                Text("50 ", style: Theme.of(context).textTheme.bodySmall),
               ]),
 
               //-- Send money to beneficiary
@@ -106,28 +97,26 @@ class WithdrawMoneyScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       //--
-                      const Row(
+                      Row(
                         children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 30, right: 4),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 22, right: 4),
                             child: Icon(Icons.add_card, size: 17),
                           ),
                           Text("withdraw money to",
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black)),
+                              style: Theme.of(context).textTheme.bodySmall),
                         ],
                       ),
                       controller.withdrawAmountController.text.isEmpty
                           ? Padding(
-                              padding: const EdgeInsets.only(right: 30),
+                              padding: const EdgeInsets.only(right: 22),
                               child: Container(
                                 height: 55,
                                 width: 135,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
-                                  color: Colors.grey,
+                                  color:
+                                      const Color.fromARGB(255, 215, 215, 215),
                                 ),
                                 child: Center(
                                   child: Row(
@@ -137,23 +126,18 @@ class WithdrawMoneyScreen extends StatelessWidget {
                                         padding: EdgeInsets.only(right: 2.0),
                                         child: Icon(Icons.add, size: 15),
                                       ),
-                                      Text(
-                                        "Add Beneficiary",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium!
-                                            .copyWith(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.black),
-                                      ),
+                                      Text("Add Beneficiary",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall!
+                                              .copyWith(fontSize: 11)),
                                     ],
                                   ),
                                 ),
                               ),
                             )
                           : Padding(
-                              padding: const EdgeInsets.only(right: 30),
+                              padding: const EdgeInsets.only(right: 22),
                               child: SizedBox(
                                 height: 55,
                                 width: 135,
@@ -181,9 +165,8 @@ class WithdrawMoneyScreen extends StatelessWidget {
                                                 .textTheme
                                                 .bodyMedium!
                                                 .copyWith(
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: Colors.black),
+                                                  fontSize: 11,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -197,7 +180,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
 
               //-- add existing
               Padding(
-                padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                padding: const EdgeInsets.only(top: 20, left: 22, right: 22),
                 child: ListTile(
                   selected: true,
                   selectedTileColor: const Color(0xFFf3f0f0),
@@ -205,8 +188,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                       side: const BorderSide(color: Colors.red)),
-                  leading: Icon(Icons.credit_card,
-                      color: Theme.of(context).colorScheme.primary),
+                  leading: SvgPicture.asset('assets/image/bank.svg'),
                   title: const Text("Sterling Bank",
                       style: TextStyle(
                           fontSize: 15,
@@ -230,7 +212,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
               controller.withdrawAmountController.text.isEmpty
                   ? Container(
                       margin:
-                          const EdgeInsets.only(top: 0, left: 25, right: 25),
+                          const EdgeInsets.only(top: 0, left: 22, right: 22),
                       height: 60,
                       width: MediaQuery.of(context).size.width,
                       child: Material(
@@ -244,7 +226,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
-                                  .copyWith(fontSize: 13),
+                                  .copyWith(fontSize: 13, color: Colors.white),
                             ),
                           ),
                         ),
@@ -269,7 +251,7 @@ class WithdrawMoneyScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
-                                  .copyWith(fontSize: 13),
+                                  .copyWith(fontSize: 13, color: Colors.white),
                             ),
                           ),
                         ),

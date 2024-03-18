@@ -24,7 +24,7 @@ class PaymentCancelWarning {
                       Container(
                         margin:
                             const EdgeInsets.only(top: 20, left: 40, right: 40),
-                        height: 250,
+                        height: 240,
                         width: double.infinity,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
@@ -33,24 +33,22 @@ class PaymentCancelWarning {
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text("Reminder",
-                                  style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black)),
-                              const Text("Do you want to cancel this operation",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black)),
+                              const SizedBox(height: 10),
+                              Text("Reminder",
+                                  style: Theme.of(context).textTheme.bodyLarge),
+                              const SizedBox(height: 10),
+                              Text(
+                                  textAlign: TextAlign.center,
+                                  "Do you want to cancel this operation",
+                                  style: Theme.of(context).textTheme.bodySmall),
 
                               //-- Continue button
                               const SizedBox(height: 20),
                               Container(
                                 margin:
                                     const EdgeInsets.only(left: 25, right: 25),
-                                height: 60,
-                                width: MediaQuery.of(context).size.width,
+                                height: 40,
+                                width: 150,
                                 child: Material(
                                   color: Theme.of(context).colorScheme.primary,
                                   borderRadius: BorderRadius.circular(30),
@@ -64,8 +62,10 @@ class PaymentCancelWarning {
                                         "Continue",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyMedium!
-                                            .copyWith(fontSize: 13),
+                                            .bodySmall!
+                                            .copyWith(
+                                                fontSize: 13,
+                                                color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -74,15 +74,15 @@ class PaymentCancelWarning {
                               const SizedBox(height: 15),
                               Container(
                                 margin: const EdgeInsets.only(
-                                    left: 25, right: 25, bottom: 25),
-                                height: 60,
+                                    left: 25, right: 25, bottom: 20),
+                                height: 40,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
                                     border: Border.all(
                                       color:
                                           Theme.of(context).colorScheme.primary,
                                     )),
-                                width: MediaQuery.of(context).size.width,
+                                width: 150,
                                 child: Material(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(30),
@@ -96,11 +96,8 @@ class PaymentCancelWarning {
                                         "Cancel",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyMedium!
-                                            .copyWith(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                color: Colors.black),
+                                            .bodySmall!
+                                            .copyWith(color: Colors.black),
                                       ),
                                     ),
                                   ),

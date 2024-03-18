@@ -17,8 +17,7 @@ class AddBeneficiary extends StatelessWidget {
         key: controller.beneficiaryKey,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           //-- back button and page title
-          Container(
-            margin: const EdgeInsets.only(top: 20),
+          SizedBox(
             width: double.infinity,
             child: Row(children: [
               Padding(
@@ -31,23 +30,16 @@ class AddBeneficiary extends StatelessWidget {
                       Icons.arrow_back,
                     )),
               ),
-              const Text("Accounts Details",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black))
+              Text("Accounts Details",
+                  style: Theme.of(context).textTheme.bodyMedium)
             ]),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20, top: 40),
-            child: Text("Bank",
-                style: TextStyle(
-                    fontSize: 14.6,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
+          Padding(
+            padding: const EdgeInsets.only(left: 22, top: 40),
+            child: Text("Bank", style: Theme.of(context).textTheme.bodySmall),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 6, left: 30, right: 30),
+            padding: const EdgeInsets.only(top: 6, left: 22, right: 22),
             child: Container(
               height: 55,
               width: double.infinity,
@@ -62,10 +54,8 @@ class AddBeneficiary extends StatelessWidget {
                     Icons.account_balance,
                     color: Colors.grey,
                   ),
-                  title: const Text(" Select Back",
-                      style: TextStyle(
-                        color: Colors.grey,
-                      )),
+                  title: Text(" Select Back",
+                      style: Theme.of(context).textTheme.bodySmall),
                   trailing: const Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.grey,
@@ -75,18 +65,15 @@ class AddBeneficiary extends StatelessWidget {
 
           //-- Account Number
           const SizedBox(height: 40),
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 22),
             child: Text("Bank Account",
-                style: TextStyle(
-                    fontSize: 14.6,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
+                style: Theme.of(context).textTheme.bodySmall),
           ),
 
           //-- Bank Account Number
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+            padding: const EdgeInsets.only(left: 22, right: 22, top: 10),
             child: TextFormField(
                 controller: controller.accountNumber,
                 validator: (value) =>
@@ -98,10 +85,7 @@ class AddBeneficiary extends StatelessWidget {
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.credit_card),
                     hintText: "Enter 10 digits account number",
-                    hintStyle: const TextStyle(
-                        fontSize: 13.6,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black),
+                    hintStyle: Theme.of(context).textTheme.bodySmall,
                     contentPadding: const EdgeInsets.only(top: 31, left: 10),
                     filled: true,
                     fillColor: const Color(0xFFf3f0f0),
@@ -113,16 +97,13 @@ class AddBeneficiary extends StatelessWidget {
           //-- Bank Account Name
           //-- Account Number
           const SizedBox(height: 40),
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 22),
             child: Text("Account Name",
-                style: TextStyle(
-                    fontSize: 14.6,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
+                style: Theme.of(context).textTheme.bodySmall),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+            padding: const EdgeInsets.only(left: 22, right: 22, top: 10),
             child: TextFormField(
                 controller: controller.accountName,
                 validator: (value) =>
@@ -131,10 +112,7 @@ class AddBeneficiary extends StatelessWidget {
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.credit_card),
                     hintText: "Enter account name",
-                    hintStyle: const TextStyle(
-                        fontSize: 13.6,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black),
+                    hintStyle: Theme.of(context).textTheme.bodySmall,
                     contentPadding: const EdgeInsets.only(top: 31, left: 10),
                     filled: true,
                     fillColor: const Color(0xFFf3f0f0),
@@ -162,7 +140,7 @@ class AddBeneficiary extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
-                        .copyWith(fontSize: 13),
+                        .copyWith(fontSize: 13, color: Colors.white),
                   ),
                 ),
               ),

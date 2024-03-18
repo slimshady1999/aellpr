@@ -129,7 +129,7 @@ class NameScreen extends GetView {
                           onTap: () {
                             if (controller.fullnameKey.currentState!
                                 .validate()) {
-                              Get.to(() => EmailScreen());
+                              Get.to(() => const EmailScreen());
                             }
                           },
                           child: Center(

@@ -1,4 +1,3 @@
-import 'package:aellpr/configurations/loading_screen/shimmer_loading.dart';
 import 'package:aellpr/controllers/dispay_user_info_controller/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,8 +13,10 @@ class UserEditProfileScreen extends StatelessWidget {
       body: SafeArea(child: Obx(
         () {
           if (controller.profileLoading.value) {
-            return const CustomShimmerLoading(
-                height: 20, width: 30, color: Colors.grey);
+            return const Padding(
+              padding: EdgeInsets.only(top: 25),
+              child: Center(child: CircularProgressIndicator()),
+            );
           }
           return SingleChildScrollView(
             child: Column(
@@ -74,16 +75,16 @@ class UserEditProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(controller.user.value.firstName.toString(),
-                              style: const TextStyle(
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.black)),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(fontSize: 19)),
                           const SizedBox(width: 6),
                           Text(controller.user.value.lastName.toString(),
-                              style: const TextStyle(
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.black)),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(fontSize: 19)),
                         ],
                       ),
                     )
@@ -92,43 +93,38 @@ class UserEditProfileScreen extends StatelessWidget {
 
                 //-- Text Form field with user data
                 const SizedBox(height: 40),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
                   child: Text("Email Address",
-                      style: TextStyle(
-                          fontSize: 14.6,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodySmall),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 5),
                   child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           hintText: controller.user.value.email.toString(),
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           contentPadding:
                               const EdgeInsets.only(top: 31, left: 10),
                           filled: true,
                           fillColor: const Color(0xFFf3f0f0),
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30)))),
+                              borderRadius: BorderRadius.circular(20)))),
                 ),
 
                 //-- Text Form field with user data
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
                   child: Text("Mobile Number",
-                      style: TextStyle(
-                          fontSize: 14.6,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodySmall),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 5),
                   child: TextFormField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
@@ -136,38 +132,36 @@ class UserEditProfileScreen extends StatelessWidget {
                               controller.user.value.phoneNumber.toString(),
                           contentPadding:
                               const EdgeInsets.only(top: 31, left: 10),
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           filled: true,
                           fillColor: const Color(0xFFf3f0f0),
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30)))),
+                              borderRadius: BorderRadius.circular(20)))),
                 ),
 
                 //-- Text Form field with user data
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
                   child: Text("Home Address",
-                      style: TextStyle(
-                          fontSize: 14.6,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodySmall),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 5),
                   child: TextFormField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                           hintText: "1 Shinna Street, Ebute metta, Lagos State",
-                          hintStyle: const TextStyle(fontSize: 13),
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           contentPadding:
                               const EdgeInsets.only(top: 31, left: 10),
                           filled: true,
                           fillColor: const Color(0xFFf3f0f0),
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30)))),
+                              borderRadius: BorderRadius.circular(20)))),
                 ),
 
                 //-- Save button
@@ -189,8 +183,8 @@ class UserEditProfileScreen extends StatelessWidget {
                           "Save",
                           style: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
-                              .copyWith(fontSize: 13),
+                              .bodyLarge!
+                              .copyWith(color: Colors.white),
                         ),
                       ),
                     ),

@@ -78,14 +78,14 @@ class PackageFirstScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //-- Package Inforations
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 SizedBox(
                     height: 200,
                     width: double.infinity,
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 30),
+                          padding: const EdgeInsets.only(left: 24),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -123,13 +123,12 @@ class PackageFirstScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15),
                                     child: Text("Pickup Point",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
@@ -144,10 +143,9 @@ class PackageFirstScreen extends StatelessWidget {
                                             prefixIcon:
                                                 const Icon(Icons.credit_card),
                                             hintText: "Location",
-                                            hintStyle: const TextStyle(
-                                                fontSize: 13.6,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black),
+                                            hintStyle: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
                                             contentPadding:
                                                 const EdgeInsets.only(
                                                     top: 31, left: 10),
@@ -169,13 +167,13 @@ class PackageFirstScreen extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          const Padding(
-                                            padding: EdgeInsets.only(left: 15),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
                                             child: Text("Drop Off Point",
-                                                style: TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black)),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
@@ -192,11 +190,9 @@ class PackageFirstScreen extends StatelessWidget {
                                                     prefixIcon: const Icon(
                                                         Icons.credit_card),
                                                     hintText: "Location",
-                                                    hintStyle: const TextStyle(
-                                                        fontSize: 13.6,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: Colors.black),
+                                                    hintStyle: Theme.of(context)
+                                                        .textTheme
+                                                        .bodySmall,
                                                     contentPadding:
                                                         const EdgeInsets.only(
                                                             top: 31, left: 10),
@@ -207,7 +203,8 @@ class PackageFirstScreen extends StatelessWidget {
                                                         borderSide:
                                                             BorderSide.none,
                                                         borderRadius:
-                                                            BorderRadius.circular(30)))),
+                                                            BorderRadius.circular(
+                                                                30)))),
                                           )
                                         ],
                                       ),
@@ -224,19 +221,16 @@ class PackageFirstScreen extends StatelessWidget {
                 //-- Upload Product Image
                 const SizedBox(height: 25),
 
-                const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
                   child: Text("Upload Product Image",
-                      style: TextStyle(
-                          fontSize: 17.5,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodyLarge),
                 ),
 
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                    margin: const EdgeInsets.only(left: 24, right: 24, top: 20),
                     height: MediaQuery.of(context).size.height / 4.4,
                     width: double.infinity,
                     color: const Color(0xFFf3f0f0),
@@ -251,17 +245,14 @@ class PackageFirstScreen extends StatelessWidget {
 
                 //-- Package Quantity
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
                   child: Text("Package Quantity",
-                      style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodyLarge),
                 ),
                 Obx(
                   () => Container(
-                    margin: const EdgeInsets.only(left: 20, right: 20, top: 15),
+                    margin: const EdgeInsets.only(left: 24, right: 24, top: 15),
                     height: 60,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -313,7 +304,7 @@ class PackageFirstScreen extends StatelessWidget {
                 //-- Product Amount
                 const SizedBox(height: 25),
                 const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(left: 24),
                   child: Text("Value of the product (Amount)",
                       style: TextStyle(
                           fontSize: 15,
@@ -321,20 +312,15 @@ class PackageFirstScreen extends StatelessWidget {
                           color: Colors.black)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 20, top: 15),
+                  padding: const EdgeInsets.only(left: 24, right: 24, top: 15),
                   child: TextFormField(
                       //controller: controller.accountNumber,
                       validator: (value) =>
                           FormValidation.fullnameVerification(value),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          prefixIcon:
-                              Image.asset("assets/image/naira_mini.png"),
                           hintText: "1,500",
-                          hintStyle: const TextStyle(
-                              fontSize: 13.6,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           contentPadding:
                               const EdgeInsets.only(top: 31, left: 10),
                           filled: true,
@@ -346,28 +332,21 @@ class PackageFirstScreen extends StatelessWidget {
 
                 //-- Product Estimated weight
                 const SizedBox(height: 25),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
                   child: Text("Product estimated weight",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
+                      style: Theme.of(context).textTheme.bodyLarge),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 20, top: 15),
+                  padding: const EdgeInsets.only(left: 24, right: 24, top: 15),
                   child: TextFormField(
                       //controller: controller.accountNumber,
                       validator: (value) =>
                           FormValidation.fullnameVerification(value),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          prefixIcon: const Icon(Icons.line_weight),
                           hintText: "0",
-                          hintStyle: const TextStyle(
-                              fontSize: 13.6,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           contentPadding:
                               const EdgeInsets.only(top: 31, left: 10),
                           filled: true,
@@ -380,7 +359,7 @@ class PackageFirstScreen extends StatelessWidget {
                 //-- Continue Button
                 Container(
                   margin: const EdgeInsets.only(
-                      top: 35, left: 25, right: 25, bottom: 25),
+                      top: 35, left: 24, right: 24, bottom: 25),
                   height: 60,
                   width: MediaQuery.of(context).size.width,
                   child: Material(
@@ -397,7 +376,7 @@ class PackageFirstScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(fontSize: 13),
+                              .copyWith(fontSize: 13, color: Colors.white),
                         ),
                       ),
                     ),

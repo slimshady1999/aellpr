@@ -7,11 +7,10 @@ enterCardDetails() {
   final controller = Get.put(EnterPinController());
   showModalBottomSheet(
       enableDrag: true,
-      showDragHandle: true,
       backgroundColor: Colors.white,
       context: Get.overlayContext!,
       builder: (context) => Container(
-          height: MediaQuery.of(context).size.height / 1.4,
+          height: MediaQuery.of(context).size.height / 1.1,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
               color: Colors.white,
@@ -27,13 +26,10 @@ enterCardDetails() {
                       const SizedBox(
                         height: 20,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 40),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 24),
                         child: Text("Enter Your Card details",
-                            style: TextStyle(
-                                fontSize: 16.5,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black)),
+                            style: Theme.of(context).textTheme.bodyLarge),
                       ),
 
                       Column(
@@ -42,7 +38,7 @@ enterCardDetails() {
                             //-- Card Holder Name
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 30, right: 30, top: 10),
+                                  left: 24, right: 24, top: 10),
                               child: TextFormField(
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
@@ -52,6 +48,8 @@ enterCardDetails() {
                                           top: 31, left: 10),
                                       filled: true,
                                       fillColor: const Color(0xFFf3f0f0),
+                                      hintStyle:
+                                          Theme.of(context).textTheme.bodySmall,
                                       border: OutlineInputBorder(
                                           borderSide: BorderSide.none,
                                           borderRadius:
@@ -61,12 +59,14 @@ enterCardDetails() {
                             //-- Card Holder Number
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 30, right: 30, top: 20),
+                                  left: 24, right: 24, top: 20),
                               child: TextFormField(
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
                                       prefixIcon: const Icon(Icons.credit_card),
                                       hintText: "Enter card number",
+                                      hintStyle:
+                                          Theme.of(context).textTheme.bodySmall,
                                       contentPadding: const EdgeInsets.only(
                                           top: 31, left: 10),
                                       filled: true,
@@ -109,6 +109,10 @@ enterCardDetails() {
                                                     ],
                                                     decoration: InputDecoration(
                                                         hintText: "MM/YY",
+                                                        hintStyle:
+                                                            Theme.of(context)
+                                                                .textTheme
+                                                                .bodySmall,
                                                         contentPadding:
                                                             const EdgeInsets
                                                                 .only(
@@ -153,6 +157,10 @@ enterCardDetails() {
                                                   ],
                                                   decoration: InputDecoration(
                                                       hintText: "CVV",
+                                                      hintStyle:
+                                                          Theme.of(context)
+                                                              .textTheme
+                                                              .bodySmall,
                                                       contentPadding:
                                                           const EdgeInsets.only(
                                                               top: 31,
@@ -182,7 +190,7 @@ enterCardDetails() {
                             Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 20),
+                                  padding: const EdgeInsets.only(left: 24),
                                   child: Checkbox(
                                       activeColor:
                                           Theme.of(context).colorScheme.primary,
@@ -192,16 +200,10 @@ enterCardDetails() {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 3.0),
-                                  child: Text(
-                                    "Save Card Details",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            color: Colors.black,
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w500),
-                                  ),
+                                  child: Text("Save Card Details",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall),
                                 ),
                               ],
                             ),
@@ -211,7 +213,7 @@ enterCardDetails() {
                       const SizedBox(height: 10),
                       Container(
                         margin: const EdgeInsets.only(
-                            left: 25, right: 25, bottom: 25),
+                            left: 24, right: 24, bottom: 25),
                         height: 60,
                         width: MediaQuery.of(context).size.width,
                         child: Material(
@@ -220,7 +222,7 @@ enterCardDetails() {
                           child: InkWell(
                             borderRadius: BorderRadius.circular(30),
                             onTap: () {
-                              controller.enterPinValidation();
+                              Get.back();
                             },
                             child: Center(
                               child: Text(
@@ -228,7 +230,8 @@ enterCardDetails() {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
-                                    .copyWith(fontSize: 13),
+                                    .copyWith(
+                                        fontSize: 13, color: Colors.white),
                               ),
                             ),
                           ),

@@ -14,10 +14,6 @@ class ForgotPasswordController extends GetxController {
   GlobalKey<FormState> passwordResetKey = GlobalKey<FormState>();
 
   //-- Initialize Controller
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   //-- Send password resend function
   Future<void> sendPasswordReset() async {
